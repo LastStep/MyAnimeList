@@ -3,8 +3,8 @@ from bs4 import BeautifulSoup as bs
 
 #login
 login_page = 'https://myanimelist.net/login.php?from=%2F'
-payload = {'user_name':'Last_Step',
-         'password':'LastStep@123',
+payload = {'user_name':'',
+         'password':'',
          'cookie':1,
          'sublogin':'Login',
          'submit':1,
