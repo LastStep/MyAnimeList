@@ -1,10 +1,10 @@
 import requests
 from bs4 import BeautifulSoup as bs
+import MyAnimeList.MALsearch as search
 
-#login
 login_page = 'https://myanimelist.net/login.php?from=%2F'
-payload = {'user_name':'',
-         'password':'',
+payload = {'user_name':'Last_Step',
+         'password':'LastStep@123',
          'cookie':1,
          'sublogin':'Login',
          'submit':1,
@@ -18,9 +18,8 @@ ListStatus = {'All Anime/Manga' : 7,
              'Dropped' : 4,
              'Plan To Watch/Read' : 6}
 
-MediaType = input('Anime/Manga : ').lower()
-url = 'https://myanimelist.net/ownlist/{}/{}/edit?hideLayout'.format(
-MediaType,input('Anime/Manga id : '))
+Mediaid, MediaType, Search = search.run()
+url = 'https://myanimelist.net/ownlist/{}/{}/edit?hideLayout'.format(MediaType,Mediaid)
 Score = input('Score : ')
 print(ListStatus)
 Status = input('Type of Status : ')
@@ -93,7 +92,8 @@ with requests.Session() as req:
                 }
 
   edit = req.post(url, data=edit_form)
-  print('Done!')
+  print('Edited : ')
+
 
 
 
