@@ -13,12 +13,13 @@ def run(login = None):
            }
   headers ={'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'}
 
-  ListStatus = {'All Anime/Manga' : 7,
+ ListStatus = {
                'Currently Watching/Reading' : 1,
                'Completed' : 2,
                'On Hold' : 3,
                'Dropped' : 4,
-               'Plan To Watch/Read' : 6}
+               'Plan To Watch/Read' : 6
+               }
 
   Mediaid, MediaType, Search = search.run()
   url = 'https://myanimelist.net/ownlist/{}/add'.format(MediaType)
