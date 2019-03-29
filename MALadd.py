@@ -5,8 +5,8 @@ import MyAnimeList.MALdelete as delete
 
 def run(login = None):
   login_page = 'https://myanimelist.net/login.php?from=%2F'
-  payload = {'user_name':'Last_Step',
-           'password':'LastStep@123',
+  payload = {'user_name':'USERNAME',
+           'password':'PASSWORD',
            'cookie':1,
            'sublogin':'Login',
            'submit':1,
